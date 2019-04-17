@@ -16,12 +16,15 @@
     "gulp-purgecss": "^1.1.1",
     "gulp-purifycss": "^0.2.0",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.11.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
     "@fortawesome/fontawesome-free-solid": "^5.0.7",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
+    "extend": "^3.0.2",
+    "lodash": "^4.17.11",
     "pump": "^3.0.0"
   }
 }
