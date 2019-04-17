@@ -14,7 +14,7 @@ gulp.task('browserSync', function() {
 
 
 gulp.task('sass', function(){
-  return gulp.src('./bulma/style.sass')
+  return gulp.src('./node_modules/bulma/style.sass')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     // .pipe(sass({outputStyle: 'compressed'}))
     .pipe(gulp.dest('build/css/'))
@@ -50,7 +50,7 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('watch', ['browserSync', 'sass', 'compress', 'purgecss'], function(){
-  gulp.watch('./bulma/style.sass', ['sass']);
+  gulp.watch('./node_modules/bulma/style.sass', ['sass']);
   gulp.watch('./**/*.php', browserSync.reload);
   gulp.watch('./elements/**/*.php', browserSync.reload);
   gulp.watch('./js/**/*.js', browserSync.reload);
