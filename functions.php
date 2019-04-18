@@ -165,3 +165,102 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// custom post for pricing table
+function custom_post_pricing() {
+
+	// Set UI labels for Custom Post Type
+		$labels = array(
+			'name'                => _x( 'Pricing', 'Post Type General Name', 'twentythirteen' ),
+			'singular_name'       => _x( 'pricing', 'Post Type Singular Name', 'twentythirteen' ),
+			'menu_name'           => __( 'Pricing', 'twentythirteen' ),
+			'parent_item_colon'   => __( 'Parent pricing', 'twentythirteen' ),
+			'all_items'           => __( 'All Pricing', 'twentythirteen' ),
+			'view_item'           => __( 'View pricing', 'twentythirteen' ),
+			'add_new_item'        => __( 'Add New pricing', 'twentythirteen' ),
+			'add_new'             => __( 'Add New pricing', 'twentythirteen' ),
+			'edit_item'           => __( 'Edit pricing', 'twentythirteen' ),
+			'update_item'         => __( 'Update pricing', 'twentythirteen' ),
+			'search_items'        => __( 'Search pricing', 'twentythirteen' ),
+			'not_found'           => __( 'Not Found', 'twentythirteen' ),
+			'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+		);
+	
+	// Set other options for Custom Post Type
+	
+		$args = array(
+			'label'               => __( 'Pricing', 'twentythirteen' ),
+			'description'         => __( 'Pricing', 'twentythirteen' ),
+			'labels'              => $labels,
+			// Features this CPT supports in Post Editor
+			'supports'            => array( 'title', 'editor', 'thumbnail', ),
+			// You can associate this CPT with a taxonomy or custom taxonomy.
+			'taxonomies'          => array( 'Pricing' ),
+			/* A hierarchical CPT is like Pages and can have
+			* Parent and child items. A non-hierarchical CPT
+			* is like Posts.
+			*/
+			'hierarchical'        => false,
+			'taxonomies'            => array( 'category'),
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 10,
+			'can_export'          => true,
+			'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'page',
+		);
+	
+		// Registering your Custom Post Type
+		register_post_type( 'Pricing', $args );
+	
+	}
+	
+	/* Hook into the 'init' action so that the function
+	* Containing our post type registration is not
+	* unnecessarily executed.
+	*/
+	
+	add_action( 'init', 'custom_post_pricing', 0 );
+
+	
+
+// 1. customize ACF path
+add_filter('acf/settings/path', 'my_acf_settings_path');
+ 
+function my_acf_settings_path( $path ) {
+ 
+    // update path
+    $path = get_stylesheet_directory() . '/acf/';
+    
+    // return
+    return $path;
+    
+}
+ 
+
+// 2. customize ACF dir
+add_filter('acf/settings/dir', 'my_acf_settings_dir');
+ 
+function my_acf_settings_dir( $dir ) {
+ 
+    // update path
+    $dir = get_stylesheet_directory_uri() . '/acf/';
+    
+    // return
+    return $dir;
+    
+}
+ 
+
+// 3. Hide ACF field group menu item
+add_filter('acf/settings/show_admin', '__return_true');
+
+
+// 4. Include ACF
+include_once( get_stylesheet_directory() . '/acf/acf.php' );
+
