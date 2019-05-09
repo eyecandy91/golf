@@ -4,7 +4,10 @@ var cssbeautify = require('gulp-cssbeautify');
 var browserSync = require('browser-sync').create();
 var uglify = require('gulp-uglify');
 var pump = require('pump');
-const purgecss = require('gulp-purgecss');
+// const purgecss = require('gulp-purgecss');
+// const gulp = require('gulp')
+const purgecss = require('gulp-purgecss')
+
 
 gulp.task('browserSync', function() {
   browserSync.init({
@@ -17,7 +20,7 @@ gulp.task('sass', function(){
   return gulp.src('./node_modules/bulma/style.sass')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     // .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('build/css/'))
+    .pipe(gulp.dest('build/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -29,13 +32,22 @@ gulp.task('beautify', function() {
         .pipe(gulp.dest(''));
 });
 
+// gulp.task('purgecss', () => {
+//   return gulp.src('style.css')
+//       .pipe(purgecss({
+//           content: ["**.php"]
+//       }))
+//       .pipe(gulp.dest(''))
+// })
+
 gulp.task('purgecss', () => {
   return gulp.src('build/css/style.css')
       .pipe(purgecss({
-          content: ["**/*.php"]
+          content: ["**/*.html", "**/*.php"]
       }))
       .pipe(gulp.dest(''))
 })
+
 
 
 // compresses all js files
@@ -54,7 +66,9 @@ gulp.task('watch', ['browserSync', 'sass', 'compress', 'purgecss'], function(){
   gulp.watch('./**/*.php', browserSync.reload);
   gulp.watch('./elements/**/*.php', browserSync.reload);
   gulp.watch('./js/**/*.js', browserSync.reload);
+  gulp.watch('style.css', browserSync.reload);
   gulp.watch('*.css', ['beautify']);
+  gulp.watch('build/css/style.css', ['purgecss']);
   // gulp.watch('*.css', browserSync.reload);
   gulp.watch('./js-dev/*.js', ['compress']);
   // Other watchers
