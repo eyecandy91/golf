@@ -23,7 +23,7 @@ $twitter_handle     = myprefix_get_theme_option('twitter_handle');
 $twitter_url        = myprefix_get_theme_option('twitter_url');
 $address            = myprefix_get_theme_option('address');
 $email_address      = myprefix_get_theme_option('email_address');
-get_template_part( 'template-parts/localhost' ); 
+// get_template_part( 'template-parts/localhost' ); 
 ?>
 
 
