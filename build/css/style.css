@@ -4940,21 +4940,22 @@ a.navbar-item,
   .navbar-end li {
     display: inline-block;
     margin-right: 2rem;
-    position: relative; }
+    position: relative;
+    min-width: 60px;
+    text-align: center; }
     .navbar-end li:hover {
       border-bottom: 2px solid #d9b854; }
       .navbar-end li:hover > a {
         color: #0a0a0a; }
     .navbar-end li:hover ul {
       display: block;
-      left: -5.5rem;
-      text-align: center;
-      margin-left: -6.5rem;
-      width: 13rem;
+      width: 12rem;
       padding: 1rem;
       padding-top: 62px;
       margin: 0;
-      position: absolute; }
+      position: absolute;
+      transform: translate(-50%, 0);
+      left: 50%; }
       .navbar-end li:hover ul:before {
         background: #d9b854;
         left: 0;
