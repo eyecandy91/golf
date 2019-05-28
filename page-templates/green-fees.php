@@ -80,7 +80,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_1; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -112,7 +112,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_2; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -144,7 +144,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_3; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -176,7 +176,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_4; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -184,29 +184,7 @@ $additional_2       = get_field('additional_2');
                     <?php endforeach;
                 wp_reset_postdata(); ?>
                 </tr>
-                <tr>
-                    <td valign="top">
-                        <p><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                </tr>
+
                 <tr>
                     <td colspan="7" valign="top" class="has-background-black table-heading">
                         <strong class="has-text-white">
@@ -238,7 +216,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_5; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -270,7 +248,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_6; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -302,7 +280,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_7; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -334,7 +312,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_8; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -342,29 +320,7 @@ $additional_2       = get_field('additional_2');
                     <?php endforeach;
                 wp_reset_postdata(); ?>
                 </tr>
-                <tr>
-                    <td valign="top">
-                        <p><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                </tr>
+
                 <tr>
                     <td colspan="7" valign="top" class="has-background-black table-heading">
                         <strong class="has-text-white">
@@ -396,7 +352,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_9; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -428,7 +384,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p align="center">£ <?php echo $price_10; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -436,61 +392,41 @@ $additional_2       = get_field('additional_2');
                     <?php endforeach;
                 wp_reset_postdata(); ?>
                 </tr>
-                <tr>
-                    <td valign="top" class="table-heading">
-                        <p><?php echo $golf_type[6]['label']; ?></p>
-                    </td>
-                    <?php
-                    $args = array(
-                        'posts_per_page'     => -1,
-                        'category_name'     => 'buggy-hire',
-                        'post_type'         => 'pricing'
-                    );
-                    $items = get_posts($args);
-                    foreach ($items as $post) : setup_postdata($post);
-                        $count++; //increment the variable by 1 each time the loop executes
-                        if (!empty($items)) { ?>
-                            <?php $price_11 = get_field('price_11'); ?>
-                            <td valign="top">
+                <?php if ($golf_type[6]['label']) { ?>
+                    <tr>
+                        <td valign="top" class="table-heading">
+                            <p><?php echo $golf_type[6]['label']; ?></p>
+                        </td>
+                        <?php
+                        $args = array(
+                            'posts_per_page'     => -1,
+                            'category_name'     => 'buggy-hire',
+                            'post_type'         => 'pricing'
+                        );
+                        $items = get_posts($args);
+                        foreach ($items as $post) : setup_postdata($post);
+                            $count++; //increment the variable by 1 each time the loop executes
+                            if (!empty($items)) { ?>
+                                <?php $price_11 = get_field('price_11'); ?>
+                                <td valign="top">
 
-                                <?php
-                                if (!empty($price_11)) {
-                                    if (fmod($price_11, 1) !== 0.00) { ?>
-                                        <p align="center">£ <?php echo $price_11; ?></p>
-                                    <? } else { ?>
-                                        <p align="center">£ <?php echo $price_11; ?>.00</p>
-                                    <?php }
-                            } else { }
-                            ?>
+                                    <?php
+                                    if (!empty($price_11)) {
+                                        if (fmod($price_11, 1) !== 0.00) { ?>
+                                            <p align="center">£ <?php echo $price_11; ?></p>
+                                        <? } else { ?>
+                                            <p align="center">£ <?php echo $price_11; ?>.00</p>
+                                        <?php }
+                                }
+                                ?>
 
-                            </td>
-                        <?php } ?>
-                    <?php endforeach;
-                wp_reset_postdata(); ?>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <p><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                </tr>
+                                </td>
+                            <?php } ?>
+                        <?php endforeach;
+                    wp_reset_postdata(); ?>
+                    </tr>
+                <?php } ?>
+
                 <tr>
                     <td colspan="7" valign="top" class="has-background-black table-heading">
                         <strong class="has-text-white">
@@ -519,7 +455,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p><span class="table-heading"><?php echo $golf_type[0]['label']; ?></span> - £ <?php echo $price_12; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -548,7 +484,7 @@ $additional_2       = get_field('additional_2');
                                     <? } else { ?>
                                         <p><span class="table-heading"><?php echo $golf_type[1]['label']; ?></span> - £ <?php echo $price_13; ?>.00</p>
                                     <?php }
-                            } else { }
+                            }
                             ?>
 
                             </td>
@@ -556,29 +492,7 @@ $additional_2       = get_field('additional_2');
                     <?php endforeach;
                 wp_reset_postdata(); ?>
                 </tr>
-                <tr>
-                    <td valign="top">
-                        <p><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                    <td valign="top">
-                        <p align="center"><strong>&nbsp;</strong></p>
-                    </td>
-                </tr>
+
                 <tr>
                     <?php if (isset($additional)) : ?>
                         <td colspan="7" valign="top">
@@ -587,11 +501,11 @@ $additional_2       = get_field('additional_2');
                     <?php endif; ?>
                 </tr>
                 <tr>
-                <?php if (isset($additional_2)) : ?>
-                    <td colspan="7" valign="top">
-                        <p><strong><?php echo $additional_2 ?></strong></p>
-                    </td>
-                <?php endif; ?>
+                    <?php if (isset($additional_2)) : ?>
+                        <td colspan="7" valign="top">
+                            <p><strong><?php echo $additional_2 ?></strong></p>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             </tbody>
         </table>
