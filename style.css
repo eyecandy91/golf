@@ -529,7 +529,8 @@ a.has-text-primary:hover, a.has-text-primary:focus {
     max-width: calc(100% - 30px);
 }
 
-.box .is-file {
+.box .is-file,
+.is-file {
     margin-top: 1rem;
 }
 

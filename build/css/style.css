@@ -1194,8 +1194,10 @@ a.has-text-danger:hover, a.has-text-danger:focus {
       border-radius: 100%; }
     .box.is-tooltip h5 {
       max-width: calc(100% - 30px); }
-  .box .is-file {
-    margin-top: 1rem; }
+
+.box .is-file,
+.is-file {
+  margin-top: 1rem; }
 
 a.box:hover, a.box:focus {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px #d9b854; }
