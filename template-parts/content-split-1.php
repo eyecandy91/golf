@@ -93,7 +93,7 @@ if (have_rows('content_boxes')) :
                                             <span class="icon is-small">
                                                 <i class="fas fa-phone"></i>
                                             </span>
-                                            <span><?php echo $shop_email; ?></span>
+                                            <span><?php echo $shop_phone; ?></span>
                                         </a>
                                     </p>
                                     <p class="control">
@@ -101,7 +101,7 @@ if (have_rows('content_boxes')) :
                                             <span class="icon is-small">
                                                 <i class="fas fa-envelope-open-text"></i>
                                             </span>
-                                            <span><?php echo $shop_phone; ?></span>
+                                            <span><?php echo $shop_email; ?></span>
                                         </a>
                                     </p>
                                 </div>
