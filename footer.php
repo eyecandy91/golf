@@ -12,13 +12,13 @@
 ?>
 
 <?php
-// ez media theme option vars
+
 $booking_text       = myprefix_get_theme_option('booking_text');
 $booking_url        = myprefix_get_theme_option('booking_url');
 $copyright          = myprefix_get_theme_option('footer_copyright');
-$telephone_shop     = myprefix_get_theme_option('telephone');
-$telephone_food     = myprefix_get_theme_option('telephone_shop');
-$telephone          = myprefix_get_theme_option('telephone_food');
+$telephone_shop     = myprefix_get_theme_option('telephone_shop');
+$telephone_food     = myprefix_get_theme_option('telephone_food');
+$telephone          = myprefix_get_theme_option('telephone');
 $twitter_handle     = myprefix_get_theme_option('twitter_handle');
 $twitter_url        = myprefix_get_theme_option('twitter_url');
 $address            = myprefix_get_theme_option('address');
