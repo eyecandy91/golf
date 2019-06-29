@@ -586,6 +586,13 @@ include_once(get_stylesheet_directory() . '/acf/acf.php');
 					} else {
 						unset( $options['fax'] ); // Remove from options if empty
 					}
+					
+					// Input
+					if ( ! empty( $options['rest_email'] ) ) {
+						$options['rest_email'] = sanitize_text_field( $options['rest_email'] );
+					} else {
+						unset( $options['rest_email'] ); // Remove from options if empty
+					}
 	
 					// // Select
 					// if ( ! empty( $options['select_example'] ) ) {
@@ -739,6 +746,15 @@ include_once(get_stylesheet_directory() . '/acf/acf.php');
 								<td>
 									<?php $value = self::get_theme_option( 'fax' ); ?>
 									<input type="text" name="theme_options[fax]" value="<?php echo esc_attr( $value ); ?>">
+								</td>
+							</tr>
+
+							<?php //fax ?>
+							<tr valign="top">
+								<th scope="row"><?php esc_html_e( 'Restuarant email', 'text-domain' ); ?></th>
+								<td>
+									<?php $value = self::get_theme_option( 'rest_email' ); ?>
+									<input type="text" name="theme_options[rest_email]" value="<?php echo esc_attr( $value ); ?>">
 								</td>
 							</tr>
 	
