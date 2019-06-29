@@ -9,6 +9,7 @@ $telephone_food         = myprefix_get_theme_option('telephone_food');
 $address                = myprefix_get_theme_option('address');
 $email_address          = myprefix_get_theme_option('email_address');
 $fax                    = myprefix_get_theme_option('fax');
+$rest_email             = myprefix_get_theme_option('rest_email');
 
 
 if (have_rows('content_boxes')) :
@@ -47,42 +48,61 @@ if (have_rows('content_boxes')) :
 
                             if (is_page('contact-us')) : ?>
                                 <div class="is-contact">
-                                    <p class="control">
-                                        <a class="button is-text is-marginless is-paddingless">
+                                    <div class="control">
+                                        <div class="contact-block is-text is-marginless is-paddingless">
                                             <span class="is-title">Enquiries </span>
-                                            <span class="icon is-small">
-                                            <i class="fas fa-golf-ball"></i>
-                                            </span>
-                                            <span><?php echo $telephone_shop; ?></span>
-                                        </a>
-                                    </p>
-                                    <p class="control">
-                                        <a class="button is-text is-marginless is-paddingless">
+                                            <div class="row has-text-weight-light">
+                                                <div>
+                                                    <span class="icon is-small">
+                                                        <i class="fas fa-phone"></i>
+                                                    </span>
+                                                    <span><?php echo $telephone_shop; ?></span>
+                                                </div>
+                                                <div class="email"><?php echo $email_address; ?></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="contact-block is-text is-marginless is-paddingless">
                                             <span class="is-title">Fax </span>
-                                            <span class="icon is-small">
-                                                <i class="fas fa-fax"></i>
-                                            </span>
-                                            <span><?php echo $fax; ?></span>
-                                        </a>
-                                    </p>
-                                    <p class="control">
-                                        <a class="button is-text is-marginless is-paddingless">
-                                            <span class="is-title">shop</span>
-                                            <span class="icon is-small">
-                                                <i class="fas fa-envelope-open-text"></i>
-                                            </span>
-                                            <span><?php echo $shop_phone; ?></span>
-                                        </a>
-                                    </p>
-                                    <p class="control">
-                                        <a class="button is-text is-marginless is-paddingless">
-                                            <span class="is-title">Restuarant</span>
-                                            <span class="icon is-small">
-                                                <i class="fas fa-cart-arrow-down"></i>
-                                            </span>
-                                            <span><?php echo $telephone_food; ?></span>
-                                        </a>
-                                    </p>
+                                            <div class="row has-text-weight-light">
+                                                <div>
+                                                    <span class="icon is-small">
+                                                        <i class="fas fa-fax"></i>
+                                                    </span>
+                                                    <span><?php echo $fax; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="contact-block is-text is-marginless is-paddingless">
+                                            <span class="is-title">Pro shop </span>
+                                            <div class="row has-text-weight-light">
+                                                <div>
+                                                    <span class="icon is-small">
+                                                        <i class="fas fa-golf-ball"></i>
+                                                    </span>
+                                                    <span><?php echo $shop_phone; ?></span>
+                                                </div>
+                                                <div class="email"><?php echo $shop_email; ?></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="contact-block is-text is-marginless is-paddingless">
+                                            <span class="is-title">Rivers restuarant</span>
+                                            <div class="row has-text-weight-light">
+                                                <div>
+                                                    <span class="icon is-small">
+                                                    <i class="fas fa-utensils"></i>
+                                                    </span>
+                                                    <span><?php echo $telephone_food; ?></span>
+                                                </div>
+                                                <div class="email"><?php echo $rest_email; ?></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             <?php endif;
 
