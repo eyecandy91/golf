@@ -1,4 +1,4 @@
 node_modules
-.github/*
+build
 js-dev
-.vscode/*
+debug.log
