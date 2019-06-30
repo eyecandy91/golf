@@ -45,6 +45,12 @@ if (have_rows('content_boxes')) :
                             <?php endif; ?>
 
                             <?php
+                if (is_page('weddings-functions')) :
+                    get_template_part('template-parts/menus');
+                endif;
+                ?>
+
+                            <?php
 
                             if (is_page('contact-us')) : ?>
                                 <div class="is-contact">

@@ -13,20 +13,10 @@ $file           = get_field('section_button_file');
                     </h1>
                 <?php endif; ?>
                 <?php if (get_field('section_sub_title')) : ?>
-                    <?php if (is_page('weddings-functions')) { ?>
-                        <div data-aos="fade-right " class="block">
-                    <?php } else { ?>
-                        <div data-aos="fade-right">
-                    <? } ?>
+                    <div data-aos="fade-right">
                         <?php the_field('section_sub_title'); ?>
                     </div>
                 <?php endif; ?>
-                
-                <?php
-                if (is_page('weddings-functions')) :
-                    get_template_part('template-parts/menus');
-                endif;
-                ?>
 
                 <?php $program = get_field('section_button_link'); ?>
 
