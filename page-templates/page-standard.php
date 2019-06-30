@@ -19,9 +19,6 @@ get_header();
 get_template_part('template-parts/hero');
 get_template_part('template-parts/centered');
 get_template_part('template-parts/content-split-1');
-if (is_page('weddings-functions')) :
-    get_template_part('template-parts/menus');
-endif;
 get_template_part('template-parts/booking');
 get_template_part('template-parts/content-split-2');
 get_template_part('template-parts/content-split-3');
