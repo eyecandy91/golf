@@ -50,8 +50,7 @@
     width: 0.625em;
 }
 
-.box:not(:last-child), .content:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
-.subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .level:not(:last-child), .list:not(:last-child), .message:not(:last-child), .tabs:not(:last-child) {
+.box:not(:last-child), .content:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .level:not(:last-child), .list:not(:last-child), .message:not(:last-child), .tabs:not(:last-child) {
     margin-bottom: 1.5rem;
 }
 
@@ -2122,30 +2121,24 @@ a.tag:hover {
     text-decoration: underline;
 }
 
-.title,
-.subtitle {
+.title {
     word-break: break-word;
 }
 
 .title em,
-  .title span,
-  .subtitle em,
-  .subtitle span {
+  .title span {
     font-weight: inherit;
 }
 
-.title sub,
-  .subtitle sub {
+.title sub {
     font-size: 0.75em;
 }
 
-.title sup,
-  .subtitle sup {
+.title sup {
     font-size: 0.75em;
 }
 
-.title .tag,
-  .subtitle .tag {
+.title .tag {
     vertical-align: middle;
 }
 
@@ -2176,10 +2169,6 @@ a.tag:hover {
     margin-top: -0.75rem;
 }
 
-.title:not(.is-spaced) + .subtitle {
-    margin-top: -1.25rem;
-}
-
 .title.is-2 {
     font-size: 2.5rem;
 }
@@ -2189,34 +2178,6 @@ a.tag:hover {
 }
 
 .title.is-8 {
-    font-size: 5rem;
-}
-
-.subtitle {
-    color: #4a4a4a;
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.subtitle strong {
-    color: #363636;
-    font-weight: 600;
-}
-
-.subtitle:not(.is-spaced) + .title {
-    margin-top: -1.25rem;
-}
-
-.subtitle.is-2 {
-    font-size: 2.5rem;
-}
-
-.subtitle.is-5 {
-    font-size: 1.25rem;
-}
-
-.subtitle.is-8 {
     font-size: 5rem;
 }
 
@@ -3212,15 +3173,6 @@ a.navbar-item:hover, a.navbar-item.is-active {
     color: white;
 }
 
-.hero.is-black .subtitle {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.hero.is-black .subtitle a:not(.button),
-      .hero.is-black .subtitle strong {
-    color: white;
-}
-
 @media screen and (max-width: 1087px) {
     .hero.is-black .navbar-menu {
         background-color: #0a0a0a;
@@ -3260,15 +3212,6 @@ a.navbar-item:hover, a.navbar-item.is-active {
 }
 
 .hero.is-light .title {
-    color: #363636;
-}
-
-.hero.is-light .subtitle {
-    color: rgba(54, 54, 54, 0.9);
-}
-
-.hero.is-light .subtitle a:not(.button),
-      .hero.is-light .subtitle strong {
     color: #363636;
 }
 
@@ -3314,15 +3257,6 @@ a.navbar-item:hover, a.navbar-item.is-active {
     color: #faf9f4;
 }
 
-.hero.is-dark .subtitle {
-    color: rgba(250, 249, 244, 0.9);
-}
-
-.hero.is-dark .subtitle a:not(.button),
-      .hero.is-dark .subtitle strong {
-    color: #faf9f4;
-}
-
 @media screen and (max-width: 1087px) {
     .hero.is-dark .navbar-menu {
         background-color: #828d62;
@@ -3365,15 +3299,6 @@ a.navbar-item:hover, a.navbar-item.is-active {
     color: #fff;
 }
 
-.hero.is-primary .subtitle {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.hero.is-primary .subtitle a:not(.button),
-      .hero.is-primary .subtitle strong {
-    color: #fff;
-}
-
 @media screen and (max-width: 1087px) {
     .hero.is-primary .navbar-menu {
         background-color: #d9b854;
@@ -3413,15 +3338,6 @@ a.navbar-item:hover, a.navbar-item.is-active {
 }
 
 .hero.is-success .title {
-    color: #fff;
-}
-
-.hero.is-success .subtitle {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.hero.is-success .subtitle a:not(.button),
-      .hero.is-success .subtitle strong {
     color: #fff;
 }
 
