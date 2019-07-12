@@ -3510,6 +3510,8 @@ a.navbar-item:hover, a.navbar-item.is-active {
 
 .negative-section span {
     font-family: "Oswald", sans-serif;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.25rem 0.5rem;
 }
 
 .positve-section {
