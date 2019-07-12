@@ -59,7 +59,7 @@ $additonal          = get_field('additional_header');
                         </h5>
                         <div>
                             <?php if ($performer) :
-                                echo "<div class='block'>";
+                                echo "<div class='block is-marginless'>";
                                 echo $performer;
                                 echo "</div>";
                             endif; ?>
