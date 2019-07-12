@@ -3001,6 +3001,11 @@ a.navbar-item:hover, a.navbar-item.is-active {
         width: 50%;
     }
 
+    .column.is-one-third-tablet {
+        flex: none;
+        width: 33.3333%;
+    }
+
     .column.is-2 {
         flex: none;
         width: 16.66667%;

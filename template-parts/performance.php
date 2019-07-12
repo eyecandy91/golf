@@ -47,7 +47,7 @@ $additonal          = get_field('additional_header');
                 $perform_file       = get_field('perform_file');
                 ?>
 
-                <div data-aos="fade-right" class="column is-full-mobile is-third-tablet is-one-quarter-desktop ">
+                <div data-aos="fade-right" class="column is-full-mobile is-one-third-tablet is-one-quarter-desktop ">
                     <div class="has-background-white box is-primary is-tooltip">
 
                         <h5 class="title is-alternative has-text-weight-bold is-5 is-uppercase">
