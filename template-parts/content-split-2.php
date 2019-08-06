@@ -24,6 +24,17 @@ if (have_rows('content_boxes')) :
                 <div class="container">
                     <div class="columns is-gapless is-vcentered content-area <?php if (get_sub_field('content_reverse_2')) : ?>reverse<?php endif; ?>">
 
+                    <?php if (is_page('golf')) { ?>
+                        <div class="has-text-centered ">
+                            <h1 class="title is-2 is-size-3-mobile"><?php echo $title ?></h1>
+                            <div class="is-column has-text-left">
+                            <?php if (!empty($info)) : ?>
+                                <?php echo $info ?>
+                            <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php } else { ?>
+
                         <div data-aos="fade-left" class="column is-half-tablet half-content">
                             <?php if (!empty($title)) : ?>
                                 <h1 class="title is-2 is-size-3-mobile"><?php echo $title ?></h1>
@@ -34,10 +45,10 @@ if (have_rows('content_boxes')) :
                             <?php endif;
 
                         if (is_page('weddings-functions')) : ?>
-                                <ul>
-                                    <?php echo $sunday_roast; ?>
-                                </ul>
-                            <?php endif;
+                            <ul>
+                                <?php echo $sunday_roast; ?>
+                            </ul>
+                        <?php endif;
 
                         if ($program == 2) { ?>
                                 <div class="field is-grouped">
@@ -66,6 +77,8 @@ if (have_rows('content_boxes')) :
                         <?php } else { ?>
                             <div data-aos="fade-up" class="column page-featured-image is-half-tablet" style="background-image: url('<?php echo $img ?>')"></div>
                         <?php } ?>
+
+                    <?php } ?>
 
                     </div>
                 </div>
