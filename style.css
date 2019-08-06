@@ -1200,9 +1200,11 @@ a.box:active {
     display: inline-block;
 }
 
-.is-column {
-    column-count: 2;
-    column-gap: 40px;
+@media screen and (min-width: 769px), print {
+    .is-column {
+        column-count: 2;
+        column-gap: 40px;
+    }
 }
 
 .input,
