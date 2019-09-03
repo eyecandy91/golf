@@ -712,6 +712,14 @@ include_once(get_stylesheet_directory() . '/acf/acf.php');
 									<input type="text" name="theme_options[twitter_url]" value="<?php echo esc_attr( $value ); ?>">
 								</td>
 							</tr>
+							<?php // facebook url ?>
+							<tr valign="top">
+								<th scope="row"><?php esc_html_e( 'Twitter url', 'text-domain' ); ?></th>
+								<td>
+									<?php $value = self::get_theme_option( 'twitter_url' ); ?>
+									<input type="text" name="theme_options[facebook_url]" value="<?php echo esc_attr( $value ); ?>">
+								</td>
+							</tr>
 
 							<?php // twitter url ?>
 							<tr valign="top">
