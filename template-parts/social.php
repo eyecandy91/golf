@@ -16,7 +16,6 @@ $fb            = myprefix_get_theme_option('facebook_url');
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
-            <?php echo $fb ?>
         </div>
     </div>
 </section>
