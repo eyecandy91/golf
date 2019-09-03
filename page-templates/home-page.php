@@ -24,6 +24,7 @@ get_template_part( 'template-parts/content-split-2' );
 get_template_part( 'template-parts/content-split-3' ); 
 get_template_part( 'template-parts/dinning' ); 
 get_template_part( 'template-parts/booking' ); 
+get_template_part( 'template-parts/social' ); 
 
 // get_sidebar();
 get_footer();
