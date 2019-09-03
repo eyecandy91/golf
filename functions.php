@@ -560,6 +560,13 @@ include_once(get_stylesheet_directory() . '/acf/acf.php');
 					}
 
 					// Input
+					if ( ! empty( $options['facebook_url'] ) ) {
+						$options['facebook_url'] = sanitize_text_field( $options['facebook_url'] );
+					} else {
+						unset( $options['facebook_url'] ); // Remove from options if empty
+					}
+
+					// Input
 					if ( ! empty( $options['address'] ) ) {
 						$options['address'] = sanitize_text_field( $options['address'] );
 					} else {
