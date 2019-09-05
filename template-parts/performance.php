@@ -12,7 +12,7 @@ $additonal          = get_field('additional_header');
     </section>
 <?php endif; ?>
 
-<section class="section content has-background-grey-lighter positve-section small">
+<section class="has-text-centered section content has-background-grey-lighter positve-section small">
     <div class="container">
         <div class="columns is-multiline negative-section small">
 
@@ -64,10 +64,10 @@ $additonal          = get_field('additional_header');
                                 echo "</div>";
                             endif; ?>
                             <?php if ($xtra) : ?>
-                                <button class="button is-small tooltip is-tooltip-multiline is-tooltip-left-mobile" data-tooltip="<?php echo $xtra; ?>">
+                                <div class="tooltip is-tooltip-multiline is-tooltip-left-mobile" data-tooltip="<?php echo $xtra; ?>">
                                     <span><i class="far fa-question-circle"></i></span>
                                     <span></span>
-                                </button>
+                                </div>
                             <?php endif; ?>
                             <?php if ($perform_file) : ?>
                                 <div>
