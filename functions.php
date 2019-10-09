@@ -246,7 +246,7 @@ function custom_post_pricing()
 
 add_action('init', 'custom_post_pricing', 0);
 
-// custom post for pricing table
+// custom post for society table
 function custom_post_society()
 {
 
@@ -308,7 +308,7 @@ function custom_post_society()
 
 add_action('init', 'custom_post_society', 0);
 
-// custom post for pricing table
+// custom post for performance table
 function custom_post_performance()
 {
 
@@ -369,6 +369,68 @@ function custom_post_performance()
 	*/
 
 add_action('init', 'custom_post_performance', 0);
+
+// custom post for christmas package table
+function custom_post_christmas()
+{
+
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x('Christmas performance', 'Post Type General Name', 'twentythirteen'),
+		'singular_name'       => _x('Christmas performance', 'Post Type Singular Name', 'twentythirteen'),
+		'menu_name'           => __('Christmas performance', 'twentythirteen'),
+		'parent_item_colon'   => __('Parent christmas performance', 'twentythirteen'),
+		'all_items'           => __('All christmas performances', 'twentythirteen'),
+		'view_item'           => __('View christmas performances', 'twentythirteen'),
+		'add_new_item'        => __('Add a new christmas performance', 'twentythirteen'),
+		'add_new'             => __('Add a new christmas performance', 'twentythirteen'),
+		'edit_item'           => __('Edit christmas  performance', 'twentythirteen'),
+		'update_item'         => __('Update christmas performance', 'twentythirteen'),
+		'search_items'        => __('Search christmas performances', 'twentythirteen'),
+		'not_found'           => __('Not Found', 'twentythirteen'),
+		'not_found_in_trash'  => __('Not found in Trash', 'twentythirteen'),
+	);
+
+	// Set other options for Custom Post Type
+
+	$args = array(
+		'label'               => __('Christmas performance', 'twentythirteen'),
+		'description'         => __('Christmas performance', 'twentythirteen'),
+		'labels'              => $labels,
+		// Features this CPT supports in Post Editor
+		'supports'            => array('title', 'editor', 'thumbnail',),
+		// You can associate this CPT with a taxonomy or custom taxonomy.
+		'taxonomies'          => array('Christmas'),
+		/* A hierarchical CPT is like Pages and can have
+			* Parent and child items. A non-hierarchical CPT
+			* is like Posts.
+			*/
+		'hierarchical'        => false,
+		'taxonomies'          => array('category', 'post_tag'),
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 10,
+		'menu_icon'           => 'dashicons-calendar-alt',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+
+	// Registering your Custom Post Type
+	register_post_type('christmas', $args);
+}
+
+/* Hook into the 'init' action so that the function
+	* Containing our post type registration is not
+	* unnecessarily executed.
+	*/
+
+add_action('init', 'custom_post_christmas', 0);
 
 // 1. customize ACF path
 add_filter('acf/settings/path', 'my_acf_settings_path');
