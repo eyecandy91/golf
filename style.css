@@ -3687,7 +3687,7 @@ a.navbar-item:hover, a.navbar-item.is-active {
 }
 
 .section .half-content .button {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .section .content-area,
@@ -3737,6 +3737,18 @@ a.navbar-item:hover, a.navbar-item.is-active {
 .negative-section span {
     font-family: "Oswald", sans-serif;
     padding: 0.25rem 0.5rem;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+    .negative-section span {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        margin: auto;
+        max-width: 70%;
+        height: 50px;
+    }
 }
 
 .positve-section {
