@@ -45,7 +45,7 @@ if (have_rows('content_boxes')) :
                             <?php endif; ?>
 
                             <?php
-                if (is_page('weddings-functions')) :
+                if (is_page(array('weddings-functions', 'christmas-package'))) :
                     get_template_part('template-parts/menus');
                 endif;
                 ?>
